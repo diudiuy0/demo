@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        #other{width: 200px;margin: 20px auto}
+        #box{width: 200px;border: 1px solid blue;font-size: 12px;margin-top: 10px;background: orange;display: none}
+    </style>
+</head>
+<body>
+    <div id="other">
+        <label><input type="checkbox">两周内</label>
+        <div id="box">为了您的信息安全，请不要在网吧或公用电脑上使用此功能！</div>
+    </div>
+
+    <script>
+        var oBox=document.getElementById('box');
+        var oLab=document.getElementsByTagName('label')[0];
+
+        oLab.onmousemove=function(){
+            oBox.style.display='block'
+        };
+        oLab.onmouseout=function(){
+            oBox.style.display='none'
+        };
+
+
+    </script>
+
+</body>
+</html>
