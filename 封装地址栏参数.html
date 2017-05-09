@@ -1,0 +1,20 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>封装地址栏参数</title>
+</head>
+<body>
+	<script>
+		var http="http://www.baidu.com?user=admin&sex=男&id=12"
+		function object(name,url){
+			var reg=new RegExp(name+"=[\\w\\u4e00=\\u9fa5]+","g")
+			var arr=url.match(reg)
+			var arr1=arr[0].split("=")
+			return arr1[1]
+		}	
+		console.log(object("user",http))
+
+	</script>
+</body>
+</html>
