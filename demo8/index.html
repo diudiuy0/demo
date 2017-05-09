@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        body,ul,li,button{margin:0;padding:0;}
+
+        #other{
+            width: 250px;
+            height: 250px;
+            margin: 0 auto;
+        }
+        #ou{
+            width: 50px;
+            height: 100px;
+            text-align: center;
+            border: 1px solid skyblue;
+            margin-top: 10px;
+            display: none;
+        }
+        #ou li{
+            list-style: none;
+            text-align: center;
+            line-height: 33px;
+            width: 50px;
+            height: 33px;
+            color: #007;
+            cursor:pointer;
+
+        }
+        #close{
+         border-top: 1px solid skyblue;
+        }
+        #btn{cursor:pointer;}
+        #ou li:hover{
+            background: blue;
+        }
+    </style>
+</head>
+<body>
+    <div id="other">
+        <button id="btn">输入法</button>
+        <ul id="ou">
+            <li>书写</li>
+            <li>拼音</li>
+            <li id="close">关闭</li>
+        </ul>
+    </div>
+
+    <script>
+        var oBtn=document.getElementById('btn'),
+                ou=document.getElementById('ou'),
+                oCl=document.getElementById('close');
+
+            oBtn.onclick=function(){
+                if(ou.style.display=='block'){
+                    ou.style.display='none'
+                }else{
+                    ou.style.display='block'
+                }
+
+                oCl.onclick=function(){
+                    ou.style.display='none'
+                }
+
+            }
+    </script>
+
+</body>
+</html>

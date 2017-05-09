@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+<script>
+    //完成下列程序段，实现b数组拷贝a数组，实现每个元素的拷贝(方法越多越好)
+    var a = [1,"yes",3];
+    var b;
+    //方法一：
+    var a = [1,"yes",3];
+    var b = new Array();
+    for(var i=0; i<3; i++){
+        b.push(a[i]);
+    }
+    alert(b);
+    //方法二：
+    var a = [1,"yes",3];
+    var b = [].concat(a);
+    alert(b);
+    //方法三：
+    var a = [1,"yes",3];
+    var b = a.slice(0,a.length);
+    alert(b);
+</script>
+</body>
+</html>

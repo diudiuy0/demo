@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="zh-cn">
+<head>
+	<meta charset="UTF-8">
+	<title>双色球</title>
+	<style>
+	span{width: 40px; height: 40px; display: block; border-radius: 40px; background: red;float: left; margin: 5px; opacity: 0.7;text-align: center; line-height: 40px; color: #fff; font-size: 24px;}
+	#box>span:nth-child(7){background: blue;}
+	button{margin-top: 10px; width: 60px; height:30px;}
+	</style>
+</head>
+<body>
+	<div id="box">
+		<span></span>
+		<span></span>
+		<span></span>
+		<span></span>
+		<span></span>
+		<span></span>
+		<span></span>
+		<button id="btn1">开始</button>
+		<button id="btn2">停止</button>
+	</div>
+	<script>
+
+		function randNoRepeat(){
+			var lg = 6;
+			var rand = [];
+			for(var i=0;rand.length<lg;i++){
+				var num = Math.ceil(Math.random()*33);
+				console.log(num);
+				if(rand.indexOf(num)==-1){
+					rand.push(num);
+				 }/*else{
+				// 	i = i-1;
+				// }*/
+			}
+			return rand;
+		}
+		function sort(){
+			var arr = randNoRepeat();
+			for(var i=0;i<arr.length;i++){
+				for(var j=i+1;j<=arr.length;j++){
+					if(arr[i]>arr[j]){
+						var temp = arr[i];
+						arr[i] = arr[j];
+						arr[j] = temp;
+					}
+				}
+			}
+			var blue = Math.ceil(Math.random()*16);
+			arr.push(blue);
+			return arr;
+		}
+		function change(){
+			var arr = sort();
+			var spans = document.getElementsByTagName("span");
+			for(var i=0;i<spans.length;i++){
+				spans[i].innerHTML = arr[i];
+			}
+		}
+		btn1.onclick = function(){
+			id = setInterval(change,500);
+		}
+		btn2.onclick = function(){
+			clearInterval(id);
+		}
+		change();
+	</script>
+</body>
+</html>

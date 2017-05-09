@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        div{width: 630px;overflow: hidden}
+        ul li{list-style: none;float: left}
+        ul li img{width:330px;height:120px }
+    </style>
+</head>
+
+<body>
+    <div>
+        <ul>
+            <li><img src="imgs/2.png"></li>
+            <li><img src="imgs/3.png"></li>
+            <li><img src="imgs/5.png"></li>
+            <li><img src="imgs/6.png"></li>
+            <li><img src="imgs/2.png"></li>
+            <li><img src="imgs/3.png"></li>
+        </ul>
+    </div>
+
+    <script>
+        var lis=document.getElementsByTagName('li');
+
+        for(var i=0;i<lis.length;i++){
+            lis[0].style.width='330px';
+            lis[i].style.width='50px';
+            lis[i].index=i;
+
+            lis[i].onmoseover=function(){
+
+            }
+
+        }
+
+
+
+    </script>
+
+</body>
+</html>

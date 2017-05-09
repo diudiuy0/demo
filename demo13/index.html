@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+<script>
+    //截取后缀  例：bbc.txt 截取为.txt
+
+    function change(filname){
+        var la=filname.lastIndexOf('.')
+        if(la==-1){
+            alert('格式不正确')
+        }else{
+            return filname.substr(la)
+        }
+    }
+
+    console.log(change('abc.txt'))
+
+</script>
+</body>
+</html>

@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="zh-cn">
+<head>
+	<meta charset="UTF-8">
+	<title>二级联动</title>
+	<style>
+	select{width: 80px; height: 30px; text-align: center; font-size: 18px; margin-right: 10px;}
+	</style>
+</head>
+<body>
+	<script>
+		var provinces = ["河南","河北","北京"];
+		var citys = [ 
+			["郑州","开封","洛阳","安阳"],
+			["石家庄","廊坊","沧州"],
+			["朝阳","海淀","昌平","房山"]
+		];
+
+		for(var i=0;i<2;i++){
+			var select = document.createElement("select");
+			select.value = provinces[i];
+			document.body.appendChild(select);
+		}
+		var sec = document.getElementsByTagName("select");
+
+		for(var i=0;i<provinces.length;i++){
+			var option = document.createElement("option");
+			option.value = i;
+			option.innerHTML = provinces[i];
+			sec[0].appendChild(option);
+		}
+
+		for(var i=0;i<citys[0].length;i++){
+			var option = document.createElement("option");
+			option.value = i;
+			option.innerHTML = citys[0][i];
+			sec[1].appendChild(option);
+		}
+
+		sec[0].onchange = function(){
+			var opts = sec[1].getElementsByTagName("option");
+			if(opts.length !== 0){
+				while (sec[1].firstChild) {
+					sec[1].removeChild(sec[1].firstChild);
+				}
+				
+			}
+			
+			if(opts.length == 0){
+				for(var j=0;j<citys[this.value].length;j++){
+					var option = document.createElement("option");
+					option.value = j;
+					option.innerHTML = citys[this.value][j];
+					sec[1].appendChild(option);
+				}
+			}
+			
+		}
+	</script>
+</body>
+</html>
